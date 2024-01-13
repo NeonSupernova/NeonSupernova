@@ -14,3 +14,10 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
+
+- 🔭 I’m currently working on [Bacon Bot](https://github.com/NeonSupernova/BACNbot)
+- 🌱 I’m currently learning Networking
+- 👯 I’m looking to collaborate on *anything python*
+- 📫 How to reach me: novapy.dev@icloud.com
+- 😄 Pronouns: el
+- ⚡ Fun fact: I chill in The Coding Den helping people out
