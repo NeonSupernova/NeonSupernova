@@ -22,4 +22,7 @@ Here are some ideas to get you started:
 - 😄 Pronouns: el
 - ⚡ Fun fact: I chill in The Coding Den helping people out
 
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=NeonSupernova&theme=tokyonight)
+> ![NeonSupernova's GitHub stats](https://github-readme-stats.vercel.app/api?username=NeonSupernova&show_icons=true&theme=codeSTACKr)
+>
+> ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=NeonSupernova&show_icons=true&theme=codeSTACKr)
+
