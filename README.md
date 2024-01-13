@@ -21,3 +21,5 @@ Here are some ideas to get you started:
 - 📫 How to reach me: novapy.dev@icloud.com
 - 😄 Pronouns: el
 - ⚡ Fun fact: I chill in The Coding Den helping people out
+
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=NeonSupernova&theme=tokyonight)
