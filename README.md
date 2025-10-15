@@ -10,9 +10,5 @@
 - 📫 How to reach me: nova@mail.infernalnova.com
 - ⚡ Fun fact: I chill in The Coding Den helping people out
 
-
-
-> ![NeonSupernova's GitHub stats](https://github-readme-stats.vercel.app/api?username=NeonSupernova&show_icons=true&theme=codeSTACKr)
->
-> ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=NeonSupernova&show_icons=true&theme=codeSTACKr)
-
+[<img align="left" width="400" alt="General statistics about NeonSupernova's GitHub account" src="/general.svg">](#)
+[<img align="right" width="400" alt="NeonSupernova's GitHub achievements" src="/achievements.svg">](#)
