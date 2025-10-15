@@ -1,9 +1,5 @@
 ### Hi there 👋
 
-<!--
-**NeonSupernova/NeonSupernova** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
--->
-
 - 🔭 I’m working on [tauri-app](https://github.com/NeonSupernova/tauri-app)
 - 🌱 I’m researching trinary computers
 - 👯 I’m looking to collaborate on *anything*
