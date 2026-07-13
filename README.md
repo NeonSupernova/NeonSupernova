@@ -1,6 +1,6 @@
 ### Hi there 👋
 
-- 🔭 I’m working on [tauri-app](https://github.com/NeonSupernova/tauri-app)
+- 🔭 I’m working on [tauri-app](https://github.com/NeonSupernova/nyet)
 - 🌱 I’m researching trinary computers
 - 👯 I’m looking to collaborate on *anything*
 - 📫 How to reach me: nova@mail.infernalnova.com
