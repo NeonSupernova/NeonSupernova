@@ -5,39 +5,37 @@
 name: Metrics
 on:
   # 🌏 Think about the planet! No need to update stats too frequently
-  schedule: [{cron: "0 0 * * *"}]
+  schedule: [{cron: "17 0 * * *"}]
   # 💡 The following line lets you run workflow manually from the action tab!
   workflow_dispatch:
+  # Regenerate when the workflow itself changes
+  push:
+    branches: [main]
+    paths: [.github/workflows/main.yml]
+
+# Never run two at once: both jobs commit to the same branch
+concurrency:
+  group: metrics
+  cancel-in-progress: false
+
 jobs:
-  metrics:
+  general:
+    name: General
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     permissions:
       contents: write
     steps:
-
-      - name: Achievements
-        # temporary solution
-        uses: stalomeow/metrics@edcae0f874d69e509d25ddd5e750a2f41cd54e10
-        with:
-          filename: achievements.svg
-          token: ${{ secrets.METRICS_TOKEN }}
-          base: ""
-          output_action: gist
-          committer_gist: ${{ secrets.GIST }}
-          plugin_achievements: yes
-          plugin_achievements_display: detailed
-          plugin_fortune: yes
-
-      - name: General
-        uses: lowlighter/metrics@latest
+      - uses: lowlighter/metrics@latest
         with:
           filename: general.svg
           token: ${{ secrets.METRICS_TOKEN }}
+          # Commit the SVG to this repo so ./general.svg in the README resolves
+          output_action: commit
+          committer_message: "chore: update general.svg [skip ci]"
           base: header
           base_indepth: yes
           config_order: base.header, isocalendar, languages, notable, discussions, topics
-          output_action: gist
-          committer_gist: ${{ secrets.GIST }}
           plugin_isocalendar: yes
           plugin_languages: yes
           plugin_languages_ignored: html, css, scss, ruby, tex, less, dockerfile, makefile, qmake, lex, cmake, shell, gnuplot, vue, scala, python, ejs, renderscript, render_script, yacc, jupyter, jupyter notebook, jupyter_notebook
@@ -50,4 +48,26 @@ jobs:
           plugin_topics: yes
           plugin_topics_limit: 0
           plugin_topics_mode: icons
-          
+
+  achievements:
+    name: Achievements
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    # Runs after General so the two commits never race
+    needs: general
+    # Uses a third-party fork (achievements plugin isn't in upstream), so a
+    # failure here must not turn the whole workflow red.
+    continue-on-error: true
+    permissions:
+      contents: write
+    steps:
+      - uses: stalomeow/metrics@edcae0f874d69e509d25ddd5e750a2f41cd54e10
+        with:
+          filename: achievements.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          output_action: commit
+          committer_message: "chore: update achievements.svg [skip ci]"
+          base: ""
+          plugin_achievements: yes
+          plugin_achievements_display: detailed
+          plugin_fortune: yes
