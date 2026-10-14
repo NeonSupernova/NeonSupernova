@@ -55,13 +55,16 @@ jobs:
     timeout-minutes: 20
     # Runs after General so the two commits never race
     needs: general
-    # Uses a third-party fork (achievements plugin isn't in upstream), so a
-    # failure here must not turn the whole workflow red.
+    # Uses our own fork (NeonSupernova/metrics) of a third-party fork that adds the
+    # achievements plugin. The fork publishes its Docker image to GHCR once, so this
+    # job pulls it instead of rebuilding for ~12 minutes. A failure here must not
+    # turn the whole workflow red.
     continue-on-error: true
     permissions:
       contents: write
     steps:
-      - uses: stalomeow/metrics@edcae0f874d69e509d25ddd5e750a2f41cd54e10
+      # Pinned to a commit; image tag forked-3.35.0-beta comes from the fork's package.json
+      - uses: NeonSupernova/metrics@82c15745acedbabae6fd708a8366fd0e689658a1
         with:
           filename: achievements.svg
           token: ${{ secrets.METRICS_TOKEN }}
